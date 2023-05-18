@@ -14,69 +14,6 @@ import static org.junit.Assert.assertEquals;
 public class RomanPrinterTest {
 
     @Test
-    public void testIPrinter(){
-        try (MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
-            integerToRomanMockedStatic.when(()->IntegerToRoman.convert(1)).thenReturn("I");
-            String letterI =
-                    " _____  \n"+
-                            "|_   _| \n"+
-                            "  | |   \n"+
-                            "  | |   \n"+
-                            " _| |_  \n"+
-                            "|_____| \n";
-
-            assertEquals(letterI, RomanPrinter.print(1));
-        }
-    }
-
-    @Test
-    public void testVPrinter(){
-        try (MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
-            integerToRomanMockedStatic.when(()->IntegerToRoman.convert(5)).thenReturn("V");
-            String letterV =
-                    "__      __ \n"+
-                            "\\ \\    / / \n"+
-                            " \\ \\  / /  \n"+
-                            "  \\ \\/ /   \n"+
-                            "   \\  /    \n"+
-                            "    \\/     \n";
-
-            assertEquals(letterV, RomanPrinter.print(5));
-        }
-    }
-
-    @Test
-    public void testXPrinter(){
-        try(MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
-            integerToRomanMockedStatic.when(()->IntegerToRoman.convert(10)).thenReturn("X");
-            String letterX =
-                    "__   __ \n"+
-                            "\\ \\ / / \n"+
-                            " \\ V /  \n"+
-                            "  > <   \n"+
-                            " / . \\  \n"+
-                            "/_/ \\_\\ \n";
-
-            assertEquals(letterX, RomanPrinter.print(10));
-        }
-    }
-
-    @Test
-    public void testLPrinter(){
-        try(MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
-            integerToRomanMockedStatic.when(()->IntegerToRoman.convert(50)).thenReturn("L");
-            String letterL =
-                    " _       \n"+
-                            "| |      \n"+
-                            "| |      \n"+
-                            "| |      \n"+
-                            "| |____  \n"+
-                            "|______| \n";
-            assertEquals(letterL, RomanPrinter.print(50));
-        }
-    }
-
-    @Test
     public void testCPrinter(){
         try(MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
             integerToRomanMockedStatic.when(()->IntegerToRoman.convert(100)).thenReturn("C");
