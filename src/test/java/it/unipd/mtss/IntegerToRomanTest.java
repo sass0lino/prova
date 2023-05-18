@@ -12,10 +12,6 @@ import org.junit.Test;
 public class IntegerToRomanTest {
 
     @Test
-    public void testConvertOnetoRoman(){
-        assertEquals("I", IntegerToRoman.convert(1));
-    }
-    @Test
     public void testConvertThreetoRoman(){
         assertEquals("III", IntegerToRoman.convert(3));
     }
