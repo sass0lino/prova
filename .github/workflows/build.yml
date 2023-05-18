@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots package
+        run: mvn -B install --file pom.xml
 
       - name: Coveralls Coverage Report Submission
         run: mvn coveralls:report --define repoToken=${{secrets.COVERALL_REPO_SECRET}}
