@@ -51,11 +51,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.head_ref }}
 
-      - name: Upload JaCoCo coverage report
-        uses: actions/upload-artifact@v3
-        with:
-          name: jacoco-report
-          path: target/site/jacoco/
-
       - name: Coveralls Coverage Report Submission
         run: mvn coveralls:report --define repoToken=${{secrets.COVERALL_REPO_SECRET}}
