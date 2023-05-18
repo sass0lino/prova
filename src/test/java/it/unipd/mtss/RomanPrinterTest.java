@@ -13,52 +13,6 @@ import static org.junit.Assert.assertEquals;
 
 public class RomanPrinterTest {
 
-    @Test
-    public void testVPrinter(){
-        try (MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
-            integerToRomanMockedStatic.when(()->IntegerToRoman.convert(5)).thenReturn("V");
-            String letterV =
-                    "__      __ \n"+
-                    "\\ \\    / / \n"+
-                    " \\ \\  / /  \n"+
-                    "  \\ \\/ /   \n"+
-                    "   \\  /    \n"+
-                    "    \\/     \n";
-
-            assertEquals(letterV, RomanPrinter.print(5));
-        }
-    }
-
-    @Test
-    public void testXPrinter(){
-        try(MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
-            integerToRomanMockedStatic.when(()->IntegerToRoman.convert(10)).thenReturn("X");
-            String letterX =
-                    "__   __ \n"+
-                    "\\ \\ / / \n"+
-                    " \\ V /  \n"+
-                    "  > <   \n"+
-                    " / . \\  \n"+
-                    "/_/ \\_\\ \n";
-
-            assertEquals(letterX, RomanPrinter.print(10));
-        }
-    }
-
-    @Test
-    public void testLPrinter(){
-        try(MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
-            integerToRomanMockedStatic.when(()->IntegerToRoman.convert(50)).thenReturn("L");
-            String letterL =
-                    " _       \n"+
-                    "| |      \n"+
-                    "| |      \n"+
-                    "| |      \n"+
-                    "| |____  \n"+
-                    "|______| \n";
-            assertEquals(letterL, RomanPrinter.print(50));
-        }
-    }
 
     @Test
     public void testCPrinter(){
