@@ -8,6 +8,7 @@ package it.unipd.mtss;
 import java.util.TreeMap;
 
 public class IntegerToRoman {
+    private IntegerToRoman() {}
 
     private static final TreeMap<Integer, String> map = new TreeMap<>();
     static {
@@ -27,7 +28,10 @@ public class IntegerToRoman {
     }
 
     public static String convert(int number){
-        int roman = map.floorKey(number); //the greatest key less than or equal to key, or null if there is no such key
+        if (number < 1 || number > 1000) {
+            throw new IllegalArgumentException("Il numero è maggiore di 1000");
+        }
+        int roman = map.floorKey(number);
         if (number == roman) {
             return map.get(number);
         }

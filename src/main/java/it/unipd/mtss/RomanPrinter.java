@@ -6,7 +6,7 @@
 package it.unipd.mtss;
 
 public class RomanPrinter {
-
+    private RomanPrinter(){}
     static final  String[] letterI = {
             " _____  ",
             "|_   _| ",
@@ -69,16 +69,19 @@ public class RomanPrinter {
     }
 
     private static String printAsciiArt(String romanNumber){
-        String number = "";
         if(romanNumber.length()!=0) {
+            String number = "";
             for (int i = 0; i < 6; i++) {
                 for (int j = 0; j < romanNumber.length(); j++) {
                     number += printLine(romanNumber.substring(j, j + 1), i);
                 }
                 number += "\n";
             }
+            return number;
         }
-        return number;
+        else {
+            throw new IllegalArgumentException("Can't print an empty expression");
+        }
     }
 
     private static String printLine(String letter, int index){
@@ -90,6 +93,7 @@ public class RomanPrinter {
         else if (letter.equals("C")){number+=printC(index);}
         else if (letter.equals("D")){number+=printD(index);}
         else if (letter.equals("M")){number+=printM(index);}
+        else {throw new IllegalArgumentException(letter+" is not a roman number");}
         return number;
     }
 
