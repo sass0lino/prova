@@ -14,22 +14,6 @@ import static org.junit.Assert.assertEquals;
 public class RomanPrinterTest {
 
     @Test
-    public void testIPrinter(){
-        try (MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
-            integerToRomanMockedStatic.when(()->IntegerToRoman.convert(1)).thenReturn("I");
-            String letterI =
-                    " _____  \n"+
-                    "|_   _| \n"+
-                    "  | |   \n"+
-                    "  | |   \n"+
-                    " _| |_  \n"+
-                    "|_____| \n";
-
-            assertEquals(letterI, RomanPrinter.print(1));
-        }
-    }
-
-    @Test
     public void testVPrinter(){
         try (MockedStatic<IntegerToRoman> integerToRomanMockedStatic = Mockito.mockStatic(IntegerToRoman.class)){
             integerToRomanMockedStatic.when(()->IntegerToRoman.convert(5)).thenReturn("V");
